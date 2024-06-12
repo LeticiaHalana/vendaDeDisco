@@ -1,0 +1,46 @@
+.dark-mode {
+    background-color: var(--color-grey-0);
+}
+
+.dark-mode-title {
+    color: var(--color-grey-9) !important;
+}
+
+.theme {
+    background-image: url(/src/assets/img/icons8-moon-50.png);
+    background-color: var(--color-grey-8);
+    border: transparent;
+    border-radius: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.dark-mode-button {
+    background-image: url(/src/assets/img/icons8-sun-48.png);
+    background-color: var(--color-grey-1);
+    border: transparent;
+    border-radius: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.title_categorys_dark {
+    color: var(--color-grey-4);
+}
+
+.button_category_dark {
+    background-color: var(--color-grey-1) !important;
+    color: var(--color-grey-3) !important;
+}
+
+.button_category_dark:hover,
+.ativo {
+    color: var(--color-grey-9) !important;
+    border: 2px solid var(--color-grey-9) !important;
+}

@@ -1,1 +1,68 @@
-/* Desenvolva sua estilização aqui ... */
+@import url(/src/styles/globalStyles.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    padding: 20px;
+}
+
+.title {
+    color: var(--color-grey-0);
+    font-size: var(--font-1);
+}
+
+.container_main {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    margin: 0px auto;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.title_categorys {
+    font-size: var(--font-2);
+}
+
+.buttons_category {
+    color: var(--color-grey-0);
+    font-size: var(--font-3);
+    border: transparent;
+    background-color: var(--color-grey-8);
+    padding: 10px 10px;
+    margin: 15px 15px 10px 0px;
+    border-radius: 4px;
+}
+
+.buttons_category:hover,
+.ativo {
+    color: var(--color-grey-9);
+    background-color: var(--color-grey-0);
+}
+
+@media(min-width: 900px) {
+    .header {
+        padding: 0px;
+        margin: 70px auto;
+    }
+
+    .container_main {
+        padding: 0px;
+    }
+
+    .buttons_category {
+        margin: 15px 35px 10px 0px;
+    }
+}
