@@ -37,7 +37,7 @@ const products = [
   },
 ];
 
-const categories = [
+export const categories = [
   "Todos",
   "Pop",
   "MPB",
@@ -51,3 +51,13 @@ const categories = [
   "Country",
   "Gospel",
 ];
+
+//Chama um versão atualizada do array
+export function getArray() {
+  return products;
+}
+
+//Chama um versão atualizada do array
+export function setArray(newArray) {
+  products = newArray;
+}

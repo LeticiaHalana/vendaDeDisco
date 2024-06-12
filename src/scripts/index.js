@@ -1,1 +1,1 @@
-/* Desenvolva sua lógica aqui ... */
+import { getArray, setArray, categories } from "./productsData";
