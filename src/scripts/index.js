@@ -13,3 +13,9 @@ function renderGeneros(categories) {
 }
 renderGeneros(categories);
 
+document.querySelectorAll('input[type="range"]').forEach(function(input) {
+    input.style.setProperty('--value', input.value);
+    input.addEventListener('input', function() {
+      input.style.setProperty('--value', input.value);
+    });
+  });

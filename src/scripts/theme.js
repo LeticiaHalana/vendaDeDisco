@@ -2,6 +2,7 @@ const button = document.querySelector(".theme");
 const body = document.querySelector('body');
 const title = document.querySelector(".title");
 const title_category = document.querySelector(".title_categorys");
+const barra_range = document.querySelector(".range");
 
 
 const buttons_category = document.querySelectorAll(".buttons_category");
@@ -13,6 +14,7 @@ button.addEventListener("click", () => {
     body.classList.toggle("dark-mode");
     title.classList.toggle("dark-mode-title");
     title_category.classList.toggle("title_categorys_dark");
+    barra_range.classList.toggle("range_dark");
 
     buttons_category.forEach((e) => {
         e.classList.toggle("button_category_dark");
