@@ -1,0 +1,96 @@
+/* STYLE INPUT RANGE */
+input[type="range"] {
+    -webkit-appearance: none;
+    /* Remove a aparência padrão do navegador */
+    width: 100%;
+    /* Largura total */
+    height: 8px;
+    /* Altura do trilho */
+    background: transparent;
+    /* Fundo transparente para que possamos usar o pseudo-elemento */
+    outline: none;
+    /* Remove a borda de foco */
+    position: relative;
+    /* Necessário para o pseudo-elemento */
+}
+
+input[type="range"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 8px;
+    background: var(--color-brand-1);
+    /* Cor do progresso */
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+
+input.range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: var(--color-grey-5);
+    /* Cor do trilho */
+    border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: var(--color-grey-5);
+    border-radius: 4px;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8px;
+    background: var(--color-grey-5);
+    border-color: transparent;
+    color: transparent;
+    border-radius: 4px;
+}
+
+/* Estilizando o thumb (ponto deslizante) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--color-grey-9);
+    border: 6px solid var(--color-brand-1);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    bottom: 5px;
+    z-index: 1;
+    /* Coloca o thumb acima do pseudo-elemento */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--color-grey-9);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--color-brand-1);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* Atualiza a largura do pseudo-elemento com base no valor do input */
+input[type="range"]::before {
+    width: calc(var(--value, 0) * 1%);
+}
+
+input[type="range"] {
+    --value: 0;
+    /* Valor inicial, deve ser atualizado com JS */
+}

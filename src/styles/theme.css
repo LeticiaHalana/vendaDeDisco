@@ -31,7 +31,7 @@
 }
 
 .title_categorys_dark {
-    color: var(--color-grey-4);
+    color: var(--color-grey-4) !important;
 }
 
 .button_category_dark {

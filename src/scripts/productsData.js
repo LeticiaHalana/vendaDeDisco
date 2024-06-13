@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     title: "Magnetite",
     category: 8,
@@ -52,12 +52,3 @@ export const categories = [
   "Gospel",
 ];
 
-//Chama um versão atualizada do array
-export function getArray() {
-  return products;
-}
-
-//Chama um versão atualizada do array
-export function setArray(newArray) {
-  products = newArray;
-}
