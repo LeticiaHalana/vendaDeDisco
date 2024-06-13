@@ -38,6 +38,7 @@ input.addEventListener("click", () => {
   console.log(valor);
 });
 
+//RENDERIZA DISCOS
 function renderTodos(data) {
   data.forEach((valor) => {
     discos.insertAdjacentHTML("beforeend", `
@@ -48,10 +49,10 @@ function renderTodos(data) {
             <h2 class="banda_ano">${valor.band}</h2>
             <h2 class="banda_ano">${valor.year}</h2>
           </div>
-          <h2 Class="musica">${valor.title}</h2>
+          <h2 Class="musica theme_disco">${valor.title}</h2>
           <div class="container_preco_botao">
-            <h2 class="preco">R$ ${(valor.price).toFixed(2)}</h2>
-            <button class="comprar">Comprar</button>
+            <h2 class="preco theme_disco">R$ ${(valor.price).toFixed(2)}</h2>
+            <button class="comprar theme_disco">Comprar</button>
           </div>
         </div>
       </div>

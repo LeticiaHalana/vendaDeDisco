@@ -49,10 +49,12 @@
     padding: 10px 10px;
     margin: 15px 15px 10px 0px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .buttons_category:hover,
-.ativo, .comprar:hover {
+.ativo,
+.comprar:hover {
     color: var(--color-grey-9);
     background-color: var(--color-grey-0);
 }
@@ -86,8 +88,6 @@
 .container_disco {
     background-color: var(--color-grey-8);
     margin-top: 40px;
-    margin-bottom: 40px;
-    
     height: 44vh;
     border-radius: 4px;
 }
@@ -166,7 +166,9 @@ img {
         justify-content: space-between;
     }
 
-    .container_disco{
+    .container_disco {
         width: 48%;
+        margin-bottom: 40px;
+
     }
 }

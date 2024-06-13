@@ -1,11 +1,30 @@
+/* BODY INTEIRO */
 .dark-mode {
     background-color: var(--color-grey-0);
 }
 
-.dark-mode-title {
-    color: var(--color-grey-9) !important;
+/* TITULOS */
+.title_dark {
+    color: var(--color-grey-4) !important;
 }
 
+.dark-mode-title {
+    color: var(--color-grey-8) !important;
+}
+.container_disco_dark{
+    background-color: var(--color-grey-1) !important;
+}
+.bando_ano_dark{
+    color: var(--color-grey-3) !important;
+}
+
+.theme_disco_dark{
+    color: var(--color-grey-8) !important;
+}
+
+.comprar_dark{
+    background-color: var(--color-grey-2) !important;
+}
 .theme {
     background-image: url(/src/assets/img/icons8-moon-50.png);
     background-color: var(--color-grey-8);
@@ -30,17 +49,13 @@
     cursor: pointer;
 }
 
-.title_categorys_dark {
-    color: var(--color-grey-4) !important;
-}
-
 .button_category_dark {
     background-color: var(--color-grey-1) !important;
     color: var(--color-grey-3) !important;
 }
 
 .button_category_dark:hover,
-.ativo {
+.ativo, .comprar_dark:hover {
     color: var(--color-grey-9) !important;
     border: 2px solid var(--color-grey-9) !important;
 }
