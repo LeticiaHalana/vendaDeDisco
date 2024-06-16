@@ -35,12 +35,6 @@ input.addEventListener('input', () => {
 
 });
 
-//PEGA INPUT PARADO
-input.addEventListener("click", () => {
-  let valor = input.value;
-  console.log(valor);
-});
-
 //RENDERIZA DISCOS
 function renderTodos(data) {
 
@@ -85,11 +79,16 @@ function filtro(categories) {
         }
       })
 
+
+
       let disco = products.filter((product) => {
-        return product.category == category.id
+
+        return product.category == category.id;
       })
 
-      renderTodos(disco);
+      category.id == 0?renderTodos(products):renderTodos(disco);
+
+      
     })
 
   })
