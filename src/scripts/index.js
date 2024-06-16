@@ -10,9 +10,12 @@ function renderGeneros(categories) {
   categories.forEach((categoria) => {
     const botao = document.createElement('button');
     botao.classList.add("buttons_category");
+    botao.id = categories.indexOf(categoria);
     botao.textContent = categoria;
     categorys.appendChild(botao);
+
   });
+
 
 }
 renderGeneros(categories);
@@ -40,6 +43,8 @@ input.addEventListener("click", () => {
 
 //RENDERIZA DISCOS
 function renderTodos(data) {
+
+  discos.innerHTML = "";
   data.forEach((valor) => {
     discos.insertAdjacentHTML("beforeend", `
       <div class="container_disco">
@@ -62,4 +67,33 @@ function renderTodos(data) {
   })
 }
 renderTodos(products);
+const botao = document.querySelectorAll(".buttons_category");
+
+//FILTROS 
+
+function filtro(categories) {
+  categories[0].classList.add("ativo");
+
+  //categories é um array de category
+  categories.forEach((category) => {
+    category.addEventListener("click", () => {
+      category.classList.add("ativo")
+
+      categories.forEach((categoryItem) => {
+        if (category.id != categoryItem.id) {
+          categoryItem.classList.remove("ativo")
+        }
+      })
+
+      let disco = products.filter((product) => {
+        return product.category == category.id
+      })
+
+      renderTodos(disco);
+    })
+
+  })
+
+}
+filtro(botao);
 

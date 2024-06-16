@@ -12,7 +12,7 @@ const banda_ano = document.querySelectorAll(".banda_ano");
 const theme_disco = document.querySelectorAll(".theme_disco");
 const comprar = document.querySelectorAll(".comprar");
 
-console.log(banda_ano);
+
 button.addEventListener("click", () => {
     // BODY
     body.classList.toggle("dark-mode");
