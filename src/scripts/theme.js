@@ -11,10 +11,13 @@ const container_disco = document.querySelectorAll(".container_disco ");
 const banda_ano = document.querySelectorAll(".banda_ano");
 const theme_disco = document.querySelectorAll(".theme_disco");
 const comprar = document.querySelectorAll(".comprar");
+let darkMode;
 
+button.addEventListener("click", themeChange)
 
-button.addEventListener("click", () => {
+function themeChange() {
     // BODY
+    darkMode = !darkMode;
     body.classList.toggle("dark-mode");
     // TITULOR COR GREY 4
     title_category.classList.toggle("title_dark");
@@ -46,5 +49,43 @@ button.addEventListener("click", () => {
     comprar.forEach((e) => {
         e.classList.toggle("comprar_dark");
     })
+    localStorage.setItem("theme", darkMode);
+};
 
-});
+function themePreferenceAnalysis() {
+    darkMode = JSON.parse(localStorage.getItem("theme"));
+    if (darkMode) {
+        body.classList.add("dark-mode");
+        // TITULOR COR GREY 4
+        title_category.classList.add("title_dark");
+        title_range.classList.add("title_dark");
+        title_albuns.classList.add("title_dark");
+        //
+
+        button.classList.add("dark-mode-button");
+        title.classList.add("dark-mode-title");
+        valor_range.classList.add("title_dark");
+        barra_range.classList.add("range_dark");
+
+        buttons_category.forEach((e) => {
+            e.classList.add("button_category_dark");
+        })
+
+        container_disco.forEach((e) => {
+            e.classList.add("container_disco_dark");
+        })
+
+        banda_ano.forEach((e) => {
+            e.classList.add("bando_ano_dark");
+        })
+
+        theme_disco.forEach((e) => {
+            e.classList.add("theme_disco_dark");
+        })
+
+        comprar.forEach((e) => {
+            e.classList.add("comprar_dark");
+        })
+    }
+}
+themePreferenceAnalysis();

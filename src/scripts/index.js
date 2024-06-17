@@ -15,8 +15,6 @@ function renderGeneros(categories) {
     categorys.appendChild(botao);
 
   });
-
-
 }
 renderGeneros(categories);
 
@@ -31,7 +29,7 @@ document.querySelectorAll('input[type="range"]').forEach(function (input) {
 //RENDERIZA O VALOR DO INPUT EM TEMPO REAL
 input.addEventListener('input', () => {
 
-  valor_range.innerHTML = `R$ ${input.value},50`;
+  valor_range.innerHTML = `Até R$ ${input.value},50`;
 
 });
 
@@ -61,6 +59,7 @@ function renderTodos(data) {
   })
 }
 renderTodos(products);
+
 const botao = document.querySelectorAll(".buttons_category");
 
 //FILTROS 
@@ -71,6 +70,7 @@ function filtro(categories) {
   //categories é um array de category
   categories.forEach((category) => {
     category.addEventListener("click", () => {
+
       category.classList.add("ativo")
 
       categories.forEach((categoryItem) => {
@@ -79,20 +79,33 @@ function filtro(categories) {
         }
       })
 
-
-
       let disco = products.filter((product) => {
-
-        return product.category == category.id;
+        if (category.id == 0) {
+          return products;
+        } else {
+          return product.category == category.id;
+        }
       })
+      renderTodos(disco);
 
-      category.id == 0?renderTodos(products):renderTodos(disco);
-
-      
+      // category.id == 0 ? renderTodos(products) : renderTodos(disco);
+      inputRange(disco);
     })
-
   })
-
 }
 filtro(botao);
 
+function inputRange(disco) {
+  input.addEventListener("click", () => {
+
+    let valor = input.value;
+
+    let disco_preco = disco.filter((product) => {
+
+      return product.price <= valor;
+    })
+
+    renderTodos(disco_preco);
+  });
+
+};
