@@ -71,6 +71,7 @@ function filtro(categories) {
   categories.forEach((category) => {
     category.addEventListener("click", () => {
 
+      const inputRange = document.getElementById('input');
       category.classList.add("ativo")
 
       categories.forEach((categoryItem) => {
@@ -78,34 +79,32 @@ function filtro(categories) {
           categoryItem.classList.remove("ativo")
         }
       })
-
-      let disco = products.filter((product) => {
+      const disco = products.filter((product) => {
         if (category.id == 0) {
-          return products;
+          return true && inputRange.value >= product.price;
         } else {
-          return product.category == category.id;
+          return product.category == category.id && inputRange.value >= product.price;
         }
-      })
+      });
       renderTodos(disco);
 
-      // category.id == 0 ? renderTodos(products) : renderTodos(disco);
-      inputRange(disco);
     })
   })
 }
 filtro(botao);
 
-function inputRange(disco) {
-  input.addEventListener("click", () => {
+function filterinputRange(input) {
+  const button_ativo = document.querySelector(".ativo");
 
-    let valor = input.value;
-
-    let disco_preco = disco.filter((product) => {
-
-      return product.price <= valor;
-    })
-
-    renderTodos(disco_preco);
-  });
-
+  categories.forEach((category) => {
+    const disco = products.filter((product) => {
+      if (button_ativo.id == 0) {
+        return true && input.value >= product.price;
+      } else {
+        return product.category == button_ativo.id && input.value >= product.price;
+      }
+    });
+    renderTodos(disco);
+  })
 };
+window.filterinputRange = filterinputRange;
