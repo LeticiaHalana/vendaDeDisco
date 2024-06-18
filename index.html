@@ -14,22 +14,22 @@
 
 <body>
   <header class="header">
-    <h1 class="title">Music Records</h1>
+    <h1 class="title" id="logo">Music Records</h1>
     <button class="theme"></button>
   </header>
 
   <main class="container_main">
-    <h2 class="title_categorys">Gênero Musical</h2>
+    <h2 class="title_categorys" id="title">Gênero Musical</h2>
     <div class="categorys"></div>
 
     <div class="input">
       <div class="label">
-        <h2 class="title_range">Definir preço</h2>
-        <h2 id="valor_range" class="valor_range">Até R$ 0,00 </h2>
+        <h2 class="title_range" id="title">Definir preço</h2>
+        <h2 id="range" class="valor_range">Até R$ 0,00 </h2>
       </div>
       <input class="range" id="input" type="range" name="valor" min="0" max="100" value="0" onchange="filterinputRange(this)">
     </div>
-    <h2 class="title_albuns">Albums Encontrados</h2>
+    <h2 class="title_albuns" id="title">Albums Encontrados</h2>
     <div class="discos"></div>
 
   </main>
