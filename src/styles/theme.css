@@ -43,7 +43,7 @@
     cursor: pointer;
 }
 
-.dark-mode-button {
+ .dark-mode button.dark-mode-button {
     background-image: url(/src/assets/img/icons8-sun-48.png);
     background-color: var(--color-grey-1);
     border: transparent;
